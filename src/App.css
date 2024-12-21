@@ -2,9 +2,19 @@
   text-align: center;
 }
 
+hr {
+  width: 80%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.hero-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 60px;
+  box-sizing: border-box;
 }
 
 @media (prefers-reduced-motion: no-preference) {

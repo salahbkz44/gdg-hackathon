@@ -1,12 +1,40 @@
 import React from "react";
 import styled from "styled-components";
+import timerBg from "../assets/images/timer_bg_black.png";
 
 const SponsorsContainer = styled.section`
   padding: 60px 20px;
-  background: #f4f4f4;
+  background: #121212;
+  background-image: url(${timerBg});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 20%;
+  min-height: 80vh;
   text-align: center;
-  border-radius: 10px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  @media (max-width: 450px) {
+    background-image: none;
+    box-shadow: none;
+  }
+`;
+
+const Sponsortext = styled.h2`
+  font-size: 4rem;
+  color: #efece6;
+  margin-bottom: 2rem;
+
+  span {
+    background: linear-gradient(180deg, #08f6f6, #017373);
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text transparent to show the gradient */
+    display: inline-block; /* Ensure the gradient applies properly */
+  }
+  @media (max-width: 768px) {
+    font-size: 2.8rem;
+  }
+  @media (max-width: 350px) {
+    font-size: 2.3rem;
+  }
 `;
 
 const Grid = styled.div`
@@ -21,7 +49,9 @@ const SponsorCard = styled.div`
   padding: 25px;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 
   &:hover {
     transform: scale(1.05);
@@ -51,7 +81,9 @@ export const Sponsors = () => {
 
   return (
     <SponsorsContainer id="sponsors">
-      <h2>Our Sponsors</h2>
+      <Sponsortext>
+        <span>Our</span>Sponsors
+      </Sponsortext>
       <Grid>
         {sponsors.map((sponsor, index) => (
           <SponsorCard key={index}>
